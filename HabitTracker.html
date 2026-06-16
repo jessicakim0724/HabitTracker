@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Habit Tracker</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFK0lEQVR4nMWXz2tcVRTHP+feNy+ZyWSmTSaNSVurBY0/6I+F0C7U6qYuRMVC6saFRREUxaUuBBciCkJXUvAP6KINKFgRRBS12krVtJZaqKVqbKxNk8ZMJpPMvB/3uHhvxkw6pmpTPcPlHu73nXO+95xz73sjLJFn7+jL1wt1n9mlyDVKAWrOi/Yfm27xLK+A+XlLsRC6aL3nmZdE5W4HnQCqyErFF0FFCEQZJdbXQ8yZW3rKFXlmU3H1nHHHRGSjb8WETlcqZlvxjBDFSqxMxp671wtiFbX0GsHUI40Q7PUkEEQai+CJUNJIrQcgSAhoGnzF0t5WkhgKhFZEDTRrfX0DL6HR6C/zHwZtK/87Aa/dooiArHRFFG1zwrwn122nHnbgWyFwijEGV6ujUbSy8a3FZDuShlNwKBaDV6CI8TJkrCWIY9z8AtmNt+EPrAHVa89E6iOcmmbh7E+YDh/xLKoxXmSSEoTqwClBGDD4wh5KjzyA8f2V2HdTXBwz8/EXjO99G4kC1AiOlIBYg5ur0r/nMdYMP5Swdg4FVJO6iQiCkBxhQdGrYwLS+ImhZ+cONAgZf+MtbD4HMRgooFGMVyzQ+/BO1LmEgDGIMRhrMdYixoARSOe/hZk/MRFQ5+jduYOOdQO4IAQfDEXAOUwui8l2JgZp3WMX89HJz3l/9COmKtNpSZNdV2pV3jn2AZ+ePkJlYa4Fm5y9zMjRQ3x1dpQgCpMaCIlvP4PNd6GxA99fdA+oJgNQknl6boZzEz9Tnq/w9bnvklqqA+DHiTEmylOU5yucGPs+JZxgZy6cY2Z+lh9+O8fY1Hhqt+gILtKXvYissdy85kaiOMb3Mi1Y1u9kaGAjk7NTZP3OtBcSrJDNs6G0lrlale7OfJqA9qep/UWUPtyTX8U9t20jjCOKue4mKYBbBzZS7FrN5ps2U8oXWrBNG+6gtKqf7UPbKHRmU3LtCSybAVVlojzJ2NQ41fp8YzWdYvqzUPJDcGELJi5kMCcUTA3Skv2VtCXQ6IHyQoUDR9/j5NhpTp0/0yQFQP0y6kDFh/pkq4PaJIqPuhiCcmM3bQm0LUHTT1DjznW34lS5MH2xuUdJNTEZMJkrDVUR44NGV83Asj3QVyhxY2k909Uym9cPtWD4q6H+e6r3tjro7IVgGsRCR0/q9B80YUOsMWzZcDvgaFSr2UzGT51roqf0EsPOFDMJiWVkWQLENdzCJRAPMQbJ3kCzCMEMhHMgBqwPHaU/sdoUuAA0TjKVyf/li824jK/SbO0rCZhMN6ZrEGl2egNbgGw/5AYhrl1hR24wycJSbCmBTfv3zTh1FzxrFZFWIl4XRFWonodMd6tlpggLF6E6nuiLxS8kNvWZRIeW3XvGgupk/1DpvBERVTEf+2EsGsUOt6hrTQa61kFuLfir0sXUkZdLsK61i8ilWKYAuRRr9Ef6hnXOxR1BpCp6pO/NNysGwK4u7ft94lJ97pMvBWOcOofGDo3jZDhS3S2ZNR1tMKdL1hwYo9Wj31IdOy+20L0XgIPDwxbg+P27nv7lwSe0/OkRp6qhqroVHuHc8VPRxd3P6Oi9j77aiC0AOjxsZWQk/nbHrue6xOztvWtrxg30ETq3Ip9knhjs5RlmvjlBtVZ7bevhd18+ODxsd4+MxE3vjYXRBx/f4k/PPu+c3ueEtYpe0181QZyBCQtHomJu35YPDxzW5PPFJfhismkmAH45eDBrDn22ft5FXhD8u+A+kPEyLr916699Lz5VWbzRxjN/AESsyHGoimOiAAAAAElFTkSuQmCC">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --beige:#FFE4B9;
+    --amber:#F5CCC2;
+    --teal:#86AF92;
+    --sage:#C0ECB8;
+    --sage-soft:#E7F6E1;
+    --navy:#5D300E;
+    --navy-soft:#7A4A22;
+    --blue:#D24558;
+    --rose:#D24558;
+    --brown:#5D300E;
+    --paper:#FBEAE7;
+    --card:#FFFFFF;
+    --ink:#1C2440;
+    --ink-soft:#6B7280;
+    --line:rgba(93,48,14,0.12);
+    --shadow:0 2px 10px rgba(93,48,14,0.06), 0 1px 2px rgba(93,48,14,0.04);
+    --radius:16px;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(circle at 8% 12%, rgba(255,228,185,0.35) 0%, transparent 40%),
+      radial-gradient(circle at 92% 85%, rgba(134,175,146,0.18) 0%, transparent 45%);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    min-height:100vh;
+    -webkit-font-smoothing:antialiased;
+    zoom:0.8;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    color:var(--rose);
+    margin:0;
+  }
+
+  .mono{font-family:'Space Mono', monospace;}
+
+  a{color:var(--blue);}
+
+  /* ---------- Layout ---------- */
+  .app{
+    display:grid;
+    grid-template-columns:280px 1fr;
+    max-width:1280px;
+    margin:0 auto;
+    min-height:100vh;
+  }
+
+  .sidebar{
+    background:var(--card);
+    border-right:1px solid var(--line);
+    padding:28px 22px;
+    display:flex;
+    flex-direction:column;
+    gap:26px;
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+  }
+  .sidebar-content{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+  }
+
+  .main{
+    padding:28px 32px 60px;
+    min-width:0;
+  }
+
+  /* ---------- Brand ---------- */
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .brand-mark{
+    width:34px;height:34px;
+    border-radius:10px;
+    background:linear-gradient(160deg, var(--teal) 0%, var(--blue) 100%);
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .brand-mark svg{width:18px;height:18px;}
+  .brand h1{font-size:21px;}
+  .brand-sub{font-size:11px;color:var(--ink-soft);font-family:'Space Mono',monospace;letter-spacing:0.04em;text-transform:uppercase;margin-top:1px;}
+
+  /* ---------- Milestone carousel ---------- */
+  .milestones-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:12px;
+  }
+  .milestones-header-left{display:flex;align-items:center;gap:12px;}
+  .milestones-label{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+  .past-milestones-link{
+    font-size:12px;
+    font-weight:600;
+    color:var(--blue);
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-decoration:underline;
+    text-decoration-color:rgba(6,132,229,0.35);
+    padding:0;
+  }
+  .milestones-carousel-wrap{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:26px;
+  }
+  .carousel-arrow{
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--card);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    flex-shrink:0;
+    box-shadow:var(--shadow);
+    transition:background .15s, opacity .15s;
+  }
+  .carousel-arrow:hover{background:var(--sage-soft);}
+  .carousel-arrow:disabled{opacity:0.3;cursor:default;}
+  .carousel-arrow:disabled:hover{background:var(--card);}
+  .carousel-arrow svg{width:15px;height:15px;stroke:var(--navy);}
+
+  .milestones{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    flex:1;
+    min-width:0;
+  }
+  .milestone-card{
+    background:var(--card);
+    border-radius:var(--radius);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    padding:18px 20px;
+    position:relative;
+    overflow:hidden;
+  }
+  .milestone-card::before{
+    content:'';
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:5px;
+    background:var(--accent, var(--teal));
+  }
+  .milestone-card-top{display:flex;align-items:flex-start;justify-content:space-between;}
+  .milestone-eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .milestone-edit-btn{
+    width:24px;height:24px;border-radius:7px;
+    border:none;background:transparent;
+    cursor:pointer;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--ink-soft);
+    flex-shrink:0;
+    transition:background .15s;
+  }
+  .milestone-edit-btn:hover{background:var(--sage-soft);color:var(--navy);}
+  .milestone-edit-btn svg{width:14px;height:14px;}
+  .milestone-title{font-size:15px;font-weight:600;color:var(--ink);margin-bottom:10px;}
+  .milestone-count-row{display:flex;align-items:baseline;gap:6px;margin-bottom:4px;flex-wrap:wrap;}
+  .milestone-num{font-family:'Fraunces',serif;font-size:30px;font-weight:600;line-height:1;color:var(--accent, var(--teal));}
+  .milestone-unit{font-size:12px;color:var(--ink-soft);}
+  .milestone-weeks{font-size:12px;color:var(--ink-soft);margin-bottom:10px;}
+  .milestone-bar-track{
+    height:6px;border-radius:4px;background:var(--sage-soft);overflow:hidden;
+  }
+  .milestone-bar-fill{height:100%;border-radius:4px;background:var(--accent, var(--teal));}
+  .milestone-pct-label{
+    font-family:'Space Mono',monospace;
+    font-size:10.5px;
+    color:var(--ink-soft);
+    margin-top:6px;
+  }
+
+  .milestone-add-card{
+    background:var(--sage-soft);
+    border:1.5px dashed var(--navy-soft);
+    border-radius:var(--radius);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    cursor:pointer;
+    min-height:128px;
+    color:var(--navy-soft);
+    transition:background .15s;
+  }
+  .milestone-add-card:hover{background:#dcf0d6;}
+  .milestone-add-card svg{width:26px;height:26px;}
+  .milestone-add-card span{font-size:12.5px;font-weight:600;}
+
+  /* ---------- Modal (add/edit milestone, past milestones) ---------- */
+  .modal-overlay{
+    position:fixed;inset:0;
+    background:rgba(93,48,14,0.28);
+    display:none;
+    align-items:center;justify-content:center;
+    z-index:200;
+    padding:20px;
+  }
+  .modal-overlay.show{display:flex;}
+  .modal-box{
+    background:var(--paper);
+    border-radius:18px;
+    padding:24px;
+    max-width:380px;
+    width:100%;
+    box-shadow:0 12px 40px rgba(93,48,14,0.25);
+    max-height:80vh;
+    overflow-y:auto;
+  }
+  .modal-title{font-size:19px;margin-bottom:16px;}
+  .modal-field{margin-bottom:14px;}
+  .modal-field label{
+    display:block;font-size:12px;font-weight:600;color:var(--ink-soft);
+    margin-bottom:5px;
+  }
+  .modal-field input[type="text"], .modal-field input[type="date"]{
+    width:100%;
+    padding:10px 12px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    background:white;
+    color:var(--ink);
+  }
+  .modal-field input:focus{outline:none;border-color:var(--blue);}
+  .color-swatch-row{display:flex;gap:8px;flex-wrap:wrap;}
+  .color-swatch{
+    width:28px;height:28px;border-radius:50%;
+    cursor:pointer;
+    border:2.5px solid transparent;
+    position:relative;
+  }
+  .color-swatch.selected{border-color:var(--navy);}
+  .color-swatch.selected::after{
+    content:'';
+    position:absolute;inset:5px;
+    border-radius:50%;
+    border:2px solid white;
+  }
+  .modal-actions{display:flex;gap:10px;margin-top:18px;}
+  .modal-btn{
+    flex:1;
+    padding:11px 0;
+    border-radius:10px;
+    border:none;
+    font-family:'Inter',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .modal-btn.primary{background:var(--navy);color:white;}
+  .modal-btn.primary:hover{background:var(--navy-soft);}
+  .modal-btn.secondary{background:var(--sage-soft);color:var(--ink);}
+  .modal-btn.secondary:hover{background:#dcf0d6;}
+  .modal-btn.danger{background:transparent;color:var(--rose);}
+  .modal-btn.danger:hover{background:rgba(210,69,88,0.08);}
+
+  .past-list{display:flex;flex-direction:column;gap:8px;}
+  .past-item{
+    display:flex;align-items:center;justify-content:between;
+    padding:11px 13px;
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:11px;
+  }
+  .past-item-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;margin-right:10px;}
+  .past-item-title{font-size:13.5px;font-weight:600;flex:1;}
+  .past-item-date{font-size:11.5px;color:var(--ink-soft);font-family:'Space Mono',monospace;}
+  .past-empty{font-size:13px;color:var(--ink-soft);text-align:center;padding:20px 0;}
+
+  /* ---------- Calendar header / nav ---------- */
+  .cal-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .cal-nav{display:flex;align-items:center;gap:14px;}
+  .nav-btn{
+    width:36px;height:36px;border-radius:50%;
+    border:1px solid var(--line);
+    background:var(--card);
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    transition:background .15s, transform .15s;
+    box-shadow:var(--shadow);
+  }
+  .nav-btn:hover{background:var(--sage-soft);transform:translateY(-1px);}
+  .nav-btn svg{width:16px;height:16px;stroke:var(--navy);}
+  .cal-month-title{font-size:26px;min-width:210px;text-align:center;}
+
+  .view-toggle{
+    display:flex;
+    background:var(--sage-soft);
+    border-radius:10px;
+    padding:3px;
+    gap:2px;
+  }
+  .view-toggle button{
+    border:none;background:transparent;
+    font-family:'Inter',sans-serif;
+    font-size:13px;font-weight:600;
+    color:var(--ink-soft);
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:all .15s;
+  }
+  .view-toggle button.active{
+    background:var(--card);
+    color:var(--navy);
+    box-shadow:0 1px 3px rgba(93,48,14,0.12);
+  }
+
+  /* ---------- Month grid ---------- */
+  .weekday-row{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    margin-bottom:8px;
+  }
+  .weekday-row span{
+    text-align:center;
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    letter-spacing:0.06em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+
+  .month-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:8px;
+  }
+
+  .day-cell{
+    background:var(--beige);
+    border-radius:12px;
+    border:1px solid var(--line);
+    min-height:196px;
+    padding:8px 8px 7px;
+    position:relative;
+    overflow:visible;
+    transition:background .35s ease, box-shadow .15s;
+    display:flex;
+    flex-direction:column;
+  }
+  .day-cell.empty{background:transparent;border:none;}
+  .day-cell.state-partial{background:var(--amber);}
+  .day-cell.state-complete{background:rgba(134,175,146,0.8);}
+  .day-cell.future{background:#FBF8F2;}
+
+  .day-cell-content{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;}
+  .day-top-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:5px;}
+  .day-num{
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    font-weight:700;
+    color:var(--ink);
+  }
+  .day-cell.is-today .day-num{
+    background:var(--navy);color:white;
+    width:19px;height:19px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:10px;
+  }
+  .day-frac-pill{
+    font-family:'Space Mono',monospace;
+    font-size:9.5px;
+    color:var(--navy);
+    background:rgba(255,255,255,0.55);
+    padding:1px 5px;
+    border-radius:6px;
+  }
+
+  .mini-task-list{display:flex;flex-direction:column;gap:3px;flex:1;}
+  .mini-task{
+    display:flex;align-items:flex-start;gap:5px;
+    cursor:pointer;
+    padding:1.5px 2px;
+    border-radius:4px;
+    user-select:none;
+  }
+  .mini-task:hover{background:rgba(255,255,255,0.45);}
+  .mini-checkbox{
+    width:12px;height:12px;border-radius:3px;
+    border:1.5px solid rgba(93,48,14,0.45);
+    background:rgba(255,255,255,0.6);
+    flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .mini-task.checked .mini-checkbox{background:var(--navy);border-color:var(--navy);}
+  .mini-checkbox svg{width:7px;height:7px;opacity:0;stroke:white;stroke-width:4;}
+  .mini-task.checked .mini-checkbox svg{opacity:1;}
+  .mini-task-label{
+    font-size:9.5px;
+    line-height:1.2;
+    font-weight:600;
+    color:var(--ink);
+    white-space:normal;
+    overflow-wrap:break-word;
+    word-break:break-word;
+  }
+  .mini-task.checked .mini-task-label{opacity:0.6;text-decoration:line-through;text-decoration-color:rgba(28,36,64,0.35);}
+
+  .mini-water{display:flex;align-items:center;gap:4px;padding:1.5px 2px;}
+  .mini-water-dots{display:flex;gap:2.5px;}
+  .mini-water-dot{
+    width:9px;height:9px;border-radius:50%;
+    border:1.5px solid var(--navy);
+    background:rgba(255,255,255,0.6);
+    cursor:pointer;
+  }
+  .mini-water-dot.filled{background:var(--navy);}
+  .mini-water-label{font-size:9.5px;font-weight:600;color:var(--ink);}
+
+  .day-cell.future .mini-task,
+  .day-cell.future .mini-water-dot{cursor:default;}
+  .day-cell.future .mini-checkbox{opacity:0.5;}
+
+  .milestone-marker{
+    position:absolute;top:5px;right:5px;
+    width:13px;height:13px;
+    z-index:2;
+  }
+  .milestone-marker svg{width:100%;height:100%;}
+
+  .section-label{
+    font-family:'Space Mono',monospace;
+    font-size:10.5px;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:18px 0 9px;
+  }
+  .section-label:first-child{margin-top:0;}
+
+  /* ---------- Sidebar stats ---------- */
+  .stat-toggle{
+    display:flex;
+    background:var(--sage-soft);
+    border-radius:9px;
+    padding:3px;
+    gap:2px;
+  }
+  .stat-toggle button{
+    flex:1;
+    border:none;background:transparent;
+    font-family:'Inter',sans-serif;
+    font-size:12px;font-weight:600;
+    color:var(--ink-soft);
+    padding:7px 0;
+    border-radius:7px;
+    cursor:pointer;
+  }
+  .stat-toggle button.active{background:var(--card);color:var(--navy);box-shadow:0 1px 3px rgba(93,48,14,0.12);}
+
+  .stat-hero{
+    text-align:center;
+    padding:18px 0 8px;
+  }
+  .stat-hero-num{font-family:'Fraunces',serif;font-size:48px;font-weight:600;color:var(--teal);line-height:1;}
+  .stat-hero-label{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+
+  .streak-row{
+    display:flex;
+    gap:10px;
+    margin-top:14px;
+  }
+  .streak-box{
+    flex:1;
+    background:var(--sage-soft);
+    border-radius:12px;
+    padding:12px 10px;
+    text-align:center;
+  }
+  .streak-num{font-family:'Space Mono',monospace;font-size:20px;font-weight:700;color:var(--navy);}
+  .streak-label{font-size:10.5px;color:var(--ink-soft);margin-top:2px;}
+
+  .habit-bar-list{display:flex;flex-direction:column;gap:11px;margin-top:14px;}
+  .habit-bar-item{}
+  .habit-bar-top{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;}
+  .habit-bar-top span:first-child{color:var(--ink);font-weight:500;}
+  .habit-bar-top span:last-child{color:var(--ink-soft);font-family:'Space Mono',monospace;}
+  .habit-bar-track{height:7px;background:var(--sage-soft);border-radius:4px;overflow:hidden;}
+  .habit-bar-fill{height:100%;border-radius:4px;background:var(--teal);}
+
+  /* ---------- Year view ---------- */
+  .year-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+  }
+  .year-month{
+    background:var(--card);
+    border-radius:14px;
+    border:1px solid var(--line);
+    padding:14px;
+  }
+  .year-month-title{font-size:13px;font-weight:600;margin-bottom:9px;color:var(--navy);}
+  .year-mini-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;}
+  .year-mini-day{
+    aspect-ratio:1;
+    border-radius:3px;
+    background:var(--beige);
+  }
+  .year-mini-day.partial{background:var(--amber);}
+  .year-mini-day.complete{background:var(--teal);}
+  .year-mini-day.empty{background:transparent;}
+
+  /* ---------- Mobile nav tabs (hidden on desktop) ---------- */
+  .mobile-tabs{display:none;}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 880px){
+    .app{grid-template-columns:1fr;}
+    .sidebar{
+      position:fixed;
+      bottom:0;left:0;right:0;
+      top:auto;
+      height:auto;
+      max-height:78vh;
+      border-right:none;
+      border-top:1px solid var(--line);
+      border-radius:22px 22px 0 0;
+      box-shadow:0 -6px 24px rgba(93,48,14,0.12);
+      transform:translateY(calc(100% - 64px));
+      transition:transform .3s ease;
+      z-index:50;
+      padding-bottom:90px;
+    }
+    .sidebar.expanded{transform:translateY(0);}
+    .sidebar-drag{
+      width:40px;height:5px;border-radius:4px;
+      background:var(--line);
+      margin:0 auto 14px;
+      cursor:pointer;
+    }
+    .main{padding:18px 12px 100px;}
+    .milestones{grid-template-columns:1fr;}
+    .milestones-carousel-wrap{gap:6px;}
+    .carousel-arrow{width:28px;height:28px;}
+    .modal-box{padding:18px;}
+    .year-grid{grid-template-columns:repeat(2,1fr);}
+    .cal-month-title{font-size:18px;min-width:120px;}
+    .month-grid{gap:5px;}
+    .day-cell{min-height:152px;padding:5px 5px 4px;border-radius:9px;overflow:visible;}
+    .mini-task-label{font-size:8.3px;}
+    .mini-checkbox{width:10px;height:10px;}
+    .mini-water-dot{width:7px;height:7px;}
+    .mini-water-label{font-size:8.3px;}
+    .day-num{font-size:10.5px;}
+    .day-frac-pill{font-size:8px;padding:1px 4px;}
+    .view-toggle button{padding:7px 11px;font-size:12px;}
+    .weekday-row span{font-size:9px;}
+  }
+
+  /* focus visibility */
+  button:focus-visible, .day-cell:focus-visible, .mini-task:focus-visible{
+    outline:2px solid var(--blue);
+    outline-offset:2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-drag" id="sidebarDrag"></div>
+
+    <div class="brand">
+      <h1>Habit Tracker</h1>
+    </div>
+
+    <div class="sidebar-content">
+      <div class="section-label">Stats window</div>
+      <div class="stat-toggle">
+        <button class="active" data-range="week">Week</button>
+        <button data-range="month">Month</button>
+        <button data-range="year">Year</button>
+      </div>
+
+      <div class="stat-hero">
+        <div class="stat-hero-num" id="statHeroNum">71%</div>
+        <div class="stat-hero-label" id="statHeroLabel">completion rate · this week</div>
+      </div>
+
+      <div class="streak-row">
+        <div class="streak-box">
+          <div class="streak-num" id="currentStreak">5</div>
+          <div class="streak-label">current streak</div>
+        </div>
+        <div class="streak-box">
+          <div class="streak-num" id="longestStreak">12</div>
+          <div class="streak-label">longest streak</div>
+        </div>
+      </div>
+
+      <div class="section-label">By habit</div>
+      <div class="habit-bar-list" id="habitBarList"></div>
+    </div>
+  </aside>
+
+  <!-- ================= MAIN ================= -->
+  <main class="main">
+
+    <div class="milestones-header">
+      <div class="milestones-header-left">
+        <span class="milestones-label">Milestones</span>
+      </div>
+      <button class="past-milestones-link" id="pastMilestonesLink">Past milestones</button>
+    </div>
+
+    <div class="milestones-carousel-wrap">
+      <button class="carousel-arrow" id="milestonePrev" aria-label="Previous milestones">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="milestones" id="milestonesGrid"></div>
+      <button class="carousel-arrow" id="milestoneNext" aria-label="Next milestones">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+
+    <div class="cal-header">
+      <div class="cal-nav">
+        <button class="nav-btn" id="prevMonth" aria-label="Previous month">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <h2 class="cal-month-title" id="calMonthTitle">June 2026</h2>
+        <button class="nav-btn" id="nextMonth" aria-label="Next month">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <div class="view-toggle">
+        <button class="active" data-view="month">Month</button>
+        <button data-view="year">Year</button>
+      </div>
+    </div>
+
+    <div class="month-view" id="monthView">
+      <div class="weekday-row">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="month-grid" id="monthGrid"></div>
+    </div>
+
+    <div class="year-view" id="yearView" style="display:none;">
+      <div class="year-grid" id="yearGrid"></div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ============ MODAL: Add / Edit Milestone ============ -->
+<div class="modal-overlay" id="milestoneModalOverlay">
+  <div class="modal-box">
+    <h3 class="modal-title" id="milestoneModalTitle">Add milestone</h3>
+    <div class="modal-field">
+      <label for="milestoneNameInput">Name</label>
+      <input type="text" id="milestoneNameInput" placeholder="e.g. Japan trip">
+    </div>
+    <div class="modal-field">
+      <label for="milestoneStartDateInput">Start date</label>
+      <input type="date" id="milestoneStartDateInput">
+    </div>
+    <div class="modal-field">
+      <label for="milestoneDateInput">End date</label>
+      <input type="date" id="milestoneDateInput">
+    </div>
+    <div class="modal-field">
+      <label>Color</label>
+      <div class="color-swatch-row" id="colorSwatchRow"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="modal-btn danger" id="milestoneDeleteBtn" style="display:none;">Delete</button>
+      <button class="modal-btn secondary" id="milestoneCancelBtn">Cancel</button>
+      <button class="modal-btn primary" id="milestoneSaveBtn">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MODAL: Past Milestones ============ -->
+<div class="modal-overlay" id="pastMilestonesOverlay">
+  <div class="modal-box">
+    <h3 class="modal-title">Past milestones</h3>
+    <div class="past-list" id="pastMilestonesList"></div>
+    <div class="modal-actions">
+      <button class="modal-btn secondary" id="pastMilestonesCloseBtn">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   DATA LAYER — Google Sheets via Apps Script
+   ========================================================= */
+
+const API_URL = 'https://script.google.com/macros/s/AKfycbw9k7PiMol4foy-yGN5FIOpbb2kw2T2kl3kteedPH0FqC3x_qj7qK2a7rEavCugHuZ8Tg/exec';
+
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+
+const MILESTONE_COLORS = ['#D24558', '#86AF92', '#F5CCC2', '#5D300E', '#FFE4B9', '#C0ECB8'];
+
+let MILESTONES = [];
+let DATA_LOADED = false;
+let SAVE_QUEUE = Promise.resolve(); // serializes writes so rapid clicks don't race each other
+
+function parseISODate(iso){
+  const [y,m,d] = String(iso).split('-').map(Number);
+  return new Date(y, m-1, d);
+}
+
+function getActiveMilestones(){
+  return MILESTONES.filter(m => parseISODate(m.date) >= TODAY).sort((a,b)=>parseISODate(a.date)-parseISODate(b.date));
+}
+function getPastMilestones(){
+  return MILESTONES.filter(m => parseISODate(m.date) < TODAY).sort((a,b)=>parseISODate(b.date)-parseISODate(a.date));
+}
+function findMilestoneOnDate(date){
+  return MILESTONES.find(m => isSameDate(parseISODate(m.date), date));
+}
+
+function getTaskDefForDate(date){
+  const dow = date.getDay(); // 0 = Sun
+  const tasks = [];
+  if(dow !== 0 && dow !== 6){
+    tasks.push({id:'diet', label:'Diet — no cheat meals, alcohol, or vape', short:'Diet', type:'check'});
+  }
+
+  if(dow === 0){ // Sunday
+    tasks.push({id:'steps', label:'10,000+ steps', short:'Steps 10k', type:'check'});
+  } else if(dow === 3 || dow === 6){ // Wed, Sat
+    tasks.push({id:'walk_outside', label:'Outdoor walk or hike (active recovery)', short:'Walk/Hike', type:'check'});
+    tasks.push({id:'steps', label:'10,000+ steps', short:'Steps 10k', type:'check'});
+  } else { // Mon Tue Thu Fri
+    tasks.push({id:'workout', label:'30-min weights + 30-min incline walk + stretch', short:'Weights + Incline Walk + Stretch', type:'check'});
+    tasks.push({id:'steps', label:'9,000+ steps', short:'Steps 9k', type:'check'});
+  }
+
+  tasks.push({id:'water', label:'Water — 3 to 4 refills (24oz)', short:'Water', type:'water', max:4});
+
+  if(dow !== 0 && dow !== 6){
+    tasks.push({id:'reading', label:'Read for 15 minutes', short:'Read', type:'check'});
+  }
+
+  if(dow === 0){
+    tasks.push({id:'church', label:'Church / online church', short:'Church', type:'check'});
+    tasks.push({id:'trade_review', label:'Review trading / charts for the week ahead', short:'Review Trading/Charts', type:'check'});
+    tasks.push({id:'finance_checkin', label:'Finance check-in', short:'Finance', type:'check'});
+  }
+
+  return tasks;
+}
+
+// In-memory cache of completion state, keyed by yyyy-mm-dd then task id.
+// Hydrated from the Sheet on load; writes go back to the Sheet via saveDayToServer().
+const STORE = {};
+
+function dateKey(d){
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+function getState(date){
+  const key = dateKey(date);
+  if(!STORE[key]) STORE[key]={};
+  return STORE[key];
+}
+
+/* ---- Convert a raw Sheet row into our STORE's boolean/number state shape ---- */
+function rowToState(row){
+  const state = {};
+  ['diet','workout','walk_outside','reading','church','trade_review','finance_checkin'].forEach(col=>{
+    const v = row[col];
+    state[col] = (v === true || v === 'TRUE' || v === 'true' || v === 1);
+  });
+  state.steps = (row.steps === true || row.steps === 'TRUE' || row.steps === 'true' || row.steps === 1);
+  const waterVal = Number(row.water);
+  state.water = isNaN(waterVal) ? 0 : waterVal;
+  return state;
+}
+
+/* ---- Convert our STORE's state shape back into a flat row for the Sheet ---- */
+function stateToRow(date, state){
+  return {
+    date: dateKey(date),
+    diet: !!state.diet,
+    workout: !!state.workout,
+    walk_outside: !!state.walk_outside,
+    steps: !!state.steps,
+    water: state.water || 0,
+    reading: !!state.reading,
+    church: !!state.church,
+    trade_review: !!state.trade_review,
+    finance_checkin: !!state.finance_checkin
+  };
+}
+
+/* ---- Initial load: fetch all days + milestones from the Sheet ---- */
+async function loadAllData(){
+  try{
+    const res = await fetch(API_URL);
+    const data = await res.json();
+    if(!data.success) throw new Error(data.error || 'Unknown server error');
+
+    data.days.forEach(row=>{
+      if(!row.date) return;
+      const key = String(row.date).split('T')[0]; // handles both 'YYYY-MM-DD' and ISO datetime strings
+      STORE[key] = rowToState(row);
+    });
+
+    MILESTONES = (data.milestones || []).map(m => ({
+      id: String(m.id),
+      name: m.name,
+      startDate: m.startDate ? String(m.startDate).split('T')[0] : '',
+      date: String(m.date).split('T')[0],
+      color: m.color || MILESTONE_COLORS[0]
+    }));
+
+    DATA_LOADED = true;
+  } catch(err){
+    console.error('Failed to load habit tracker data:', err);
+    showLoadError();
+  }
+}
+
+function showLoadError(){
+  const grid = document.getElementById('monthGrid');
+  if(grid){
+    grid.insertAdjacentHTML('afterbegin', `
+      <div style="grid-column:1/-1; padding:16px; background:#fff3f3; border:1px solid #D24558; border-radius:10px; color:#5D300E; font-size:13px; margin-bottom:10px;">
+        Couldn't load your data from Google Sheets. Check your internet connection and try refreshing. Changes you make now won't be saved until this is fixed.
+      </div>
+    `);
+  }
+}
+
+/* ---- Save a single day's state back to the Sheet (debounced/queued) ---- */
+function saveDayToServer(date){
+  const state = getState(date);
+  const row = stateToRow(date, state);
+  SAVE_QUEUE = SAVE_QUEUE.then(()=>
+    fetch(API_URL, {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'}, // avoids CORS preflight on Apps Script
+      body: JSON.stringify({action:'saveDay', day: row})
+    }).catch(err=>console.error('Save failed for', row.date, err))
+  );
+}
+
+function saveMilestoneToServer(milestone){
+  SAVE_QUEUE = SAVE_QUEUE.then(()=>
+    fetch(API_URL, {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({action:'saveMilestone', milestone})
+    }).catch(err=>console.error('Save failed for milestone', milestone.id, err))
+  );
+}
+
+function deleteMilestoneFromServer(id){
+  SAVE_QUEUE = SAVE_QUEUE.then(()=>
+    fetch(API_URL, {
+      method:'POST',
+      headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({action:'deleteMilestone', id})
+    }).catch(err=>console.error('Delete failed for milestone', id, err))
+  );
+}
+
+function isTaskDone(state, task){
+  if(task.type==='water') return (state[task.id]||0) >= task.max;
+  return !!state[task.id];
+}
+
+function dayCompletion(date){
+  const tasks = getTaskDefForDate(date);
+  const state = getState(date);
+  const done = tasks.filter(t=>isTaskDone(state,t)).length;
+  return {done, total:tasks.length, frac: tasks.length? done/tasks.length : 0};
+}
+
+function dayStateClass(date){
+  if(date > TODAY) return 'state-none';
+  const {frac} = dayCompletion(date);
+  if(frac >= 0.999) return 'state-complete';
+  if(frac > 0) return 'state-partial';
+  return 'state-none';
+}
+
+/* =========================================================
+   RENDER: MONTH GRID (checkboxes live inside each day cell)
+   ========================================================= */
+let viewMonth = TODAY.getMonth();
+let viewYear = TODAY.getFullYear();
+
+function renderMiniTaskHtml(date, task, state){
+  const done = isTaskDone(state, task);
+  const isFuture = date > TODAY;
+
+  if(task.type === 'water'){
+    const filled = state[task.id]||0;
+    const dots = [0,1,2,3].map(i=>
+      `<div class="mini-water-dot ${i<filled?'filled':''}" data-water-idx="${i}" data-task="${task.id}"></div>`
+    ).join('');
+    return `
+      <div class="mini-water">
+        <span class="mini-water-label">${task.short}</span>
+        <div class="mini-water-dots">${dots}</div>
+      </div>
+    `;
+  }
+
+  return `
+    <div class="mini-task ${done?'checked':''}" data-task="${task.id}">
+      <div class="mini-checkbox"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7"/></svg></div>
+      <span class="mini-task-label">${task.short}</span>
+    </div>
+  `;
+}
+
+function wireDayCellEvents(cell, date){
+  if(date > TODAY) return; // future days are locked, view-only
+  const state = getState(date);
+
+  cell.querySelectorAll('.mini-task').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const taskId = el.dataset.task;
+      state[taskId] = !state[taskId];
+      saveDayToServer(date);
+      renderMonth();
+      renderSidebarStats();
+    });
+  });
+
+  cell.querySelectorAll('.mini-water-dot').forEach(dot=>{
+    dot.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const idx = parseInt(dot.dataset.waterIdx);
+      const taskId = dot.dataset.task;
+      state[taskId] = idx+1 === (state[taskId]||0) ? idx : idx+1;
+      saveDayToServer(date);
+      renderMonth();
+      renderSidebarStats();
+    });
+  });
+}
+
+function renderMonth(){
+  const titleEl = document.getElementById('calMonthTitle');
+  const first = new Date(viewYear, viewMonth, 1);
+  titleEl.textContent = first.toLocaleDateString('en-US', {month:'long', year:'numeric'});
+
+  const grid = document.getElementById('monthGrid');
+  grid.innerHTML = '';
+
+  const startDow = first.getDay();
+  const daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
+
+  for(let i=0;i<startDow;i++){
+    const blank = document.createElement('div');
+    blank.className = 'day-cell empty';
+    grid.appendChild(blank);
+  }
+
+  for(let day=1; day<=daysInMonth; day++){
+    const date = new Date(viewYear, viewMonth, day);
+    const cell = document.createElement('div');
+    const stateClass = dayStateClass(date);
+    const isFuture = date > TODAY;
+    cell.className = 'day-cell ' + stateClass + (isSameDate(date,TODAY)?' is-today':'') + (isFuture?' future':'');
+
+    const tasks = getTaskDefForDate(date);
+    const state = getState(date);
+    const {done,total} = dayCompletion(date);
+
+    const dayMilestone = findMilestoneOnDate(date);
+
+    const tasksHtml = tasks.map(t=>renderMiniTaskHtml(date,t,state)).join('');
+
+    cell.innerHTML = `
+      ${dayMilestone? `<div class="milestone-marker" title="${dayMilestone.name}"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.2H22l-6 4.4 2.3 7.1L12 16.3 5.7 20.7 8 13.6 2 9.2h7.6z" fill="${dayMilestone.color}"/></svg></div>`:''}
+      <div class="day-cell-content">
+        <div class="day-top-row">
+          <div class="day-num">${day}</div>
+          ${isFuture?'':`<span class="day-frac-pill">${done}/${total}</span>`}
+        </div>
+        <div class="mini-task-list">${tasksHtml}</div>
+      </div>
+    `;
+
+    wireDayCellEvents(cell, date);
+    grid.appendChild(cell);
+  }
+}
+
+function isSameDate(a,b){
+  return a.getFullYear()===b.getFullYear() && a.getMonth()===b.getMonth() && a.getDate()===b.getDate();
+}
+
+/* =========================================================
+   RENDER: YEAR VIEW
+   ========================================================= */
+function renderYear(){
+  const grid = document.getElementById('yearGrid');
+  grid.innerHTML = '';
+  for(let m=0;m<12;m++){
+    const monthBox = document.createElement('div');
+    monthBox.className = 'year-month';
+    const first = new Date(viewYear, m, 1);
+    const daysInMonth = new Date(viewYear, m+1, 0).getDate();
+    const startDow = first.getDay();
+
+    let cellsHtml = '';
+    for(let i=0;i<startDow;i++){
+      cellsHtml += `<div class="year-mini-day empty"></div>`;
+    }
+    for(let day=1; day<=daysInMonth; day++){
+      const date = new Date(viewYear, m, day);
+      let cls = 'year-mini-day';
+      if(date <= TODAY){
+        const {frac} = dayCompletion(date);
+        if(frac>=0.999) cls += ' complete';
+        else if(frac>0) cls += ' partial';
+      } else {
+        cls += ' empty';
+      }
+      cellsHtml += `<div class="${cls}" title="${date.toLocaleDateString()}"></div>`;
+    }
+
+    monthBox.innerHTML = `<div class="year-month-title">${first.toLocaleDateString('en-US',{month:'long'})}</div><div class="year-mini-grid">${cellsHtml}</div>`;
+    grid.appendChild(monthBox);
+  }
+}
+
+/* =========================================================
+   SIDEBAR STATS
+   ========================================================= */
+let statRange = 'week';
+
+function getRangeDates(range){
+  const dates = [];
+  let days = range==='week'?7:(range==='month'?30:365);
+  for(let i=days-1;i>=0;i--){
+    const d = new Date(TODAY);
+    d.setDate(d.getDate()-i);
+    if(d<=TODAY) dates.push(d);
+  }
+  return dates;
+}
+
+function renderSidebarStats(){
+  const dates = getRangeDates(statRange);
+  let totalDone=0, totalTasks=0;
+  const habitTotals = {};
+
+  dates.forEach(d=>{
+    const tasks = getTaskDefForDate(d);
+    const state = getState(d);
+    tasks.forEach(t=>{
+      const key = t.id;
+      if(!habitTotals[key]) habitTotals[key] = {label:t.short, done:0, total:0};
+      habitTotals[key].total++;
+      if(isTaskDone(state,t)){
+        habitTotals[key].done++;
+        totalDone++;
+      }
+      totalTasks++;
+    });
+  });
+
+  const pct = totalTasks? Math.round(totalDone/totalTasks*100) : 0;
+  document.getElementById('statHeroNum').textContent = pct+'%';
+  document.getElementById('statHeroLabel').textContent = `completion rate · this ${statRange}`;
+
+  // streaks (based on full data through today, independent of range toggle)
+  const {current, longest} = computeStreaks();
+  document.getElementById('currentStreak').textContent = current;
+  document.getElementById('longestStreak').textContent = longest;
+
+  // habit bars
+  const barList = document.getElementById('habitBarList');
+  barList.innerHTML = '';
+  Object.values(habitTotals).forEach(h=>{
+    const hpct = h.total? Math.round(h.done/h.total*100):0;
+    const row = document.createElement('div');
+    row.className = 'habit-bar-item';
+    row.innerHTML = `
+      <div class="habit-bar-top"><span>${h.label}</span><span>${h.done}/${h.total}</span></div>
+      <div class="habit-bar-track"><div class="habit-bar-fill" style="width:${hpct}%"></div></div>
+    `;
+    barList.appendChild(row);
+  });
+}
+
+function computeStreaks(){
+  let current=0, longest=0, run=0;
+  // walk backward from today
+  let d = new Date(TODAY);
+  while(true){
+    const {frac} = dayCompletion(d);
+    if(frac>=0.999){
+      current++;
+      d.setDate(d.getDate()-1);
+    } else break;
+  }
+  // longest streak across stored history
+  const keys = Object.keys(STORE).sort();
+  keys.forEach(k=>{
+    const [y,m,day] = k.split('-').map(Number);
+    const date = new Date(y,m-1,day);
+    const {frac} = dayCompletion(date);
+    if(frac>=0.999){
+      run++;
+      longest = Math.max(longest, run);
+    } else run=0;
+  });
+  longest = Math.max(longest, current);
+  return {current, longest};
+}
+
+/* =========================================================
+   MILESTONES — carousel, add/edit modal, past list
+   ========================================================= */
+let milestoneCarouselIndex = 0;
+let editingMilestoneId = null; // null = adding new
+let selectedColor = MILESTONE_COLORS[0];
+
+function computeMilestoneCompletionPct(milestone){
+  if(!milestone.startDate) return 0;
+  const start = parseISODate(milestone.startDate);
+  const end = parseISODate(milestone.date);
+  const rangeEnd = TODAY < end ? TODAY : end; // don't count days beyond today (haven't happened) or beyond the end date
+
+  if(start > rangeEnd) return 0; // milestone hasn't started yet
+
+  let totalFrac = 0, dayCount = 0;
+  const cursor = new Date(start);
+  while(cursor <= rangeEnd){
+    const {frac} = dayCompletion(new Date(cursor));
+    totalFrac += frac;
+    dayCount++;
+    cursor.setDate(cursor.getDate()+1);
+  }
+  return dayCount ? Math.round((totalFrac/dayCount)*100) : 0;
+}
+
+function renderMilestoneCard(m){
+  const days = Math.ceil((parseISODate(m.date) - TODAY) / 86400000);
+  const safeDays = Math.max(days, 0);
+  const pct = computeMilestoneCompletionPct(m);
+
+  return `
+    <div class="milestone-card" style="--accent:${m.color}">
+      <div class="milestone-card-top">
+        <div class="milestone-eyebrow">${parseISODate(m.date).toLocaleDateString('en-US',{month:'short', day:'numeric', year:'numeric'})}</div>
+        <button class="milestone-edit-btn" data-edit="${m.id}" aria-label="Edit milestone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        </button>
+      </div>
+      <div class="milestone-title">${m.name}</div>
+      <div class="milestone-count-row">
+        <span class="milestone-num">${safeDays}</span>
+        <span class="milestone-unit">days to go</span>
+      </div>
+      <div class="milestone-weeks">${Math.floor(safeDays/7)} week${Math.floor(safeDays/7)===1?'':'s'} left</div>
+      <div class="milestone-bar-track"><div class="milestone-bar-fill" style="width:${pct}%"></div></div>
+      <div class="milestone-pct-label">${pct}% complete</div>
+    </div>
+  `;
+}
+
+function renderMilestones(){
+  const active = getActiveMilestones();
+  const grid = document.getElementById('milestonesGrid');
+  grid.innerHTML = '';
+
+  const perPage = 2;
+  // total "items" = real milestones + 1 virtual add-card slot at the end
+  const totalItems = active.length + 1;
+  const maxIndex = Math.max(0, totalItems - perPage);
+  if(milestoneCarouselIndex > maxIndex) milestoneCarouselIndex = maxIndex;
+  if(milestoneCarouselIndex < 0) milestoneCarouselIndex = 0;
+
+  for(let slot=0; slot<perPage; slot++){
+    const itemIndex = milestoneCarouselIndex + slot;
+    if(itemIndex < active.length){
+      grid.insertAdjacentHTML('beforeend', renderMilestoneCard(active[itemIndex]));
+    } else if(itemIndex === active.length){
+      grid.insertAdjacentHTML('beforeend', `
+        <div class="milestone-add-card" id="addMilestoneCard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <span>Add milestone</span>
+        </div>
+      `);
+    }
+  }
+
+  document.getElementById('milestonePrev').disabled = milestoneCarouselIndex <= 0;
+  document.getElementById('milestoneNext').disabled = milestoneCarouselIndex >= maxIndex;
+
+  // wire edit buttons
+  grid.querySelectorAll('[data-edit]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      openMilestoneModal(btn.dataset.edit);
+    });
+  });
+  const addCard = document.getElementById('addMilestoneCard');
+  if(addCard) addCard.addEventListener('click', ()=>openMilestoneModal(null));
+}
+
+function buildColorSwatches(){
+  const row = document.getElementById('colorSwatchRow');
+  row.innerHTML = MILESTONE_COLORS.map(c=>
+    `<div class="color-swatch ${c===selectedColor?'selected':''}" style="background:${c}" data-color="${c}"></div>`
+  ).join('');
+  row.querySelectorAll('.color-swatch').forEach(sw=>{
+    sw.addEventListener('click', ()=>{
+      selectedColor = sw.dataset.color;
+      buildColorSwatches();
+    });
+  });
+}
+
+function openMilestoneModal(id){
+  editingMilestoneId = id;
+  const overlay = document.getElementById('milestoneModalOverlay');
+  const title = document.getElementById('milestoneModalTitle');
+  const nameInput = document.getElementById('milestoneNameInput');
+  const startDateInput = document.getElementById('milestoneStartDateInput');
+  const dateInput = document.getElementById('milestoneDateInput');
+  const deleteBtn = document.getElementById('milestoneDeleteBtn');
+
+  if(id){
+    const m = MILESTONES.find(x=>x.id===id);
+    title.textContent = 'Edit milestone';
+    nameInput.value = m.name;
+    startDateInput.value = m.startDate || '';
+    dateInput.value = m.date;
+    selectedColor = m.color;
+    deleteBtn.style.display = '';
+  } else {
+    title.textContent = 'Add milestone';
+    nameInput.value = '';
+    startDateInput.value = '';
+    dateInput.value = '';
+    selectedColor = MILESTONE_COLORS[0];
+    deleteBtn.style.display = 'none';
+  }
+  buildColorSwatches();
+  overlay.classList.add('show');
+  nameInput.focus();
+}
+
+function closeMilestoneModal(){
+  document.getElementById('milestoneModalOverlay').classList.remove('show');
+  editingMilestoneId = null;
+}
+
+document.getElementById('milestoneCancelBtn').addEventListener('click', closeMilestoneModal);
+document.getElementById('milestoneModalOverlay').addEventListener('click', (e)=>{
+  if(e.target.id === 'milestoneModalOverlay') closeMilestoneModal();
+});
+
+document.getElementById('milestoneSaveBtn').addEventListener('click', ()=>{
+  const name = document.getElementById('milestoneNameInput').value.trim();
+  const startDate = document.getElementById('milestoneStartDateInput').value;
+  const date = document.getElementById('milestoneDateInput').value;
+  if(!name || !date || !startDate){
+    alert('Please enter a name, start date, and end date.');
+    return;
+  }
+  if(startDate > date){
+    alert('Start date must be before the end date.');
+    return;
+  }
+  let savedMilestone;
+  if(editingMilestoneId){
+    const m = MILESTONES.find(x=>x.id===editingMilestoneId);
+    m.name = name; m.startDate = startDate; m.date = date; m.color = selectedColor;
+    savedMilestone = m;
+  } else {
+    savedMilestone = {id:'ms_'+Date.now(), name, startDate, date, color:selectedColor};
+    MILESTONES.push(savedMilestone);
+  }
+  saveMilestoneToServer(savedMilestone);
+  closeMilestoneModal();
+  renderMilestones();
+  renderMonth();
+});
+
+document.getElementById('milestoneDeleteBtn').addEventListener('click', ()=>{
+  if(editingMilestoneId){
+    MILESTONES = MILESTONES.filter(x=>x.id!==editingMilestoneId);
+    deleteMilestoneFromServer(editingMilestoneId);
+  }
+  closeMilestoneModal();
+  renderMilestones();
+  renderMonth();
+});
+
+document.getElementById('milestonePrev').addEventListener('click', ()=>{
+  milestoneCarouselIndex -= 2;
+  renderMilestones();
+});
+document.getElementById('milestoneNext').addEventListener('click', ()=>{
+  milestoneCarouselIndex += 2;
+  renderMilestones();
+});
+
+function renderPastMilestones(){
+  const past = getPastMilestones();
+  const list = document.getElementById('pastMilestonesList');
+  if(past.length === 0){
+    list.innerHTML = '<div class="past-empty">No past milestones yet.</div>';
+    return;
+  }
+  list.innerHTML = past.map(m=>`
+    <div class="past-item">
+      <div class="past-item-dot" style="background:${m.color}"></div>
+      <div class="past-item-title">${m.name}</div>
+      <div class="past-item-date">${parseISODate(m.date).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})}</div>
+    </div>
+  `).join('');
+}
+
+document.getElementById('pastMilestonesLink').addEventListener('click', ()=>{
+  renderPastMilestones();
+  document.getElementById('pastMilestonesOverlay').classList.add('show');
+});
+document.getElementById('pastMilestonesCloseBtn').addEventListener('click', ()=>{
+  document.getElementById('pastMilestonesOverlay').classList.remove('show');
+});
+document.getElementById('pastMilestonesOverlay').addEventListener('click', (e)=>{
+  if(e.target.id === 'pastMilestonesOverlay') document.getElementById('pastMilestonesOverlay').classList.remove('show');
+});
+
+/* =========================================================
+   VIEW TOGGLES & NAV
+   ========================================================= */
+document.querySelectorAll('.view-toggle button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.view-toggle button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const view = btn.dataset.view;
+    document.getElementById('monthView').style.display = view==='month' ? '' : 'none';
+    document.getElementById('yearView').style.display = view==='year' ? '' : 'none';
+    if(view==='year') renderYear();
+  });
+});
+
+document.querySelectorAll('.stat-toggle button').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    document.querySelectorAll('.stat-toggle button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    statRange = btn.dataset.range;
+    renderSidebarStats();
+  });
+});
+
+document.getElementById('prevMonth').addEventListener('click', ()=>{
+  viewMonth--;
+  if(viewMonth<0){viewMonth=11; viewYear--;}
+  renderMonth();
+});
+document.getElementById('nextMonth').addEventListener('click', ()=>{
+  viewMonth++;
+  if(viewMonth>11){viewMonth=0; viewYear++;}
+  renderMonth();
+});
+
+document.getElementById('sidebarDrag').addEventListener('click', ()=>{
+  document.getElementById('sidebar').classList.toggle('expanded');
+});
+
+/* =========================================================
+   INIT
+   ========================================================= */
+async function init(){
+  document.getElementById('monthGrid').innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:40px; color:var(--ink-soft); font-family:Space Mono, monospace; font-size:13px;">Loading your data…</div>';
+  await loadAllData();
+  renderMonth();
+  renderSidebarStats();
+  renderMilestones();
+}
+init();
+</script>
+
+</body>
+</html>
