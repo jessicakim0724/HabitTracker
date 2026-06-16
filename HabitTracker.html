@@ -204,12 +204,6 @@
     height:6px;border-radius:4px;background:var(--sage-soft);overflow:hidden;
   }
   .milestone-bar-fill{height:100%;border-radius:4px;background:var(--accent, var(--teal));}
-  .milestone-pct-label{
-    font-family:'Space Mono',monospace;
-    font-size:10.5px;
-    color:var(--ink-soft);
-    margin-top:6px;
-  }
 
   .milestone-add-card{
     background:var(--sage-soft);
@@ -1215,7 +1209,6 @@ function renderMilestoneCard(m){
       </div>
       <div class="milestone-weeks">${Math.floor(safeDays/7)} week${Math.floor(safeDays/7)===1?'':'s'} left</div>
       <div class="milestone-bar-track"><div class="milestone-bar-fill" style="width:${pct}%"></div></div>
-      <div class="milestone-pct-label">${pct}% complete</div>
     </div>
   `;
 }
